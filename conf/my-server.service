@@ -1,0 +1,13 @@
+[Unit]
+Description=Flask Web Application Server using Gunicorn
+After=network.target
+
+[Service]
+User=danmax
+WorkingDirectory=/home/danmax/code/serials_list
+Environment="PATH=/home/danmax/code/serials_list/env/bin"
+ExecStart=/home/danmax/code/serials_list/env/bin/gunicorn -w 3 --bind unix:myproject.sock -m 007 wsgi:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

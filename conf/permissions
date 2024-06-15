@@ -1,0 +1,8 @@
+permissions on unnix socket
+good guide there 
+https://stackoverflow.com/questions/39183357/how-to-resolve-nginx-proxy-pass-502-bad-gateway-error
+
+
+sudo setfacl -R -m u:www-data:rwX /path-to-your-unix-socket
+sudo setfacl -Rd -m u:www-data:rwX /path-to-your-unix-socket
+
